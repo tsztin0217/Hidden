@@ -1,6 +1,16 @@
 def hidden(matrix, n):
-    # Your implementation here!
-    pass
+    arr = []
+    for letters in matrix:
+        for letter in letters:
+            arr.append(letter)
+    
+    sentence = []
+    for i in range(0, len(arr), n):
+        sentence.append(arr[i])
+    
+    str_sentence = ""
+    return str_sentence.join(sentence)
+        
 
 matrix_1 = (
     ('u','e','r','e', ' ', 'e'),
@@ -11,6 +21,7 @@ matrix_1 = (
     ('y', 'e'),
     ('u', 'a', 'u', 't')
 )
+
 assert hidden(matrix_1, 2) == 'ur doing great'
 assert hidden(matrix_1, 3) == 'uedbnqgya'
 assert hidden(matrix_1, 525600) == 'u'
